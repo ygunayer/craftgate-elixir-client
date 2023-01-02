@@ -1,0 +1,7 @@
+{
+  "errors": {
+    "errorCode": "10051",
+    "errorDescription": "Kart limiti yetersiz, yetersiz bakiye",
+    "errorGroup": "NOT_SUFFICIENT_FUNDS"
+  }
+}

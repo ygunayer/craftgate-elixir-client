@@ -1,0 +1,11 @@
+{
+  "skip_files": [
+    "lib/craftgate/request",
+    "lib/craftgate/response",
+    "lib/craftgate/model",
+    "lib/craftgate/adapter.ex",
+    "lib/craftgate/enum.ex",
+    "lib/mix",
+    "test/support"
+  ]
+}

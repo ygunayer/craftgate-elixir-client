@@ -1,0 +1,7 @@
+{
+  "currency": "EUR",
+  "price": "19.99",
+  "remittanceReasonType": "REDEEM_ONLY_LOYALTY",
+  "memberId": 42,
+  "description": "foo"
+}

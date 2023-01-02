@@ -1,0 +1,6 @@
+{
+  "paymentId": 42,
+  "additionalParams": {
+    "foo": "bar"
+  }
+}

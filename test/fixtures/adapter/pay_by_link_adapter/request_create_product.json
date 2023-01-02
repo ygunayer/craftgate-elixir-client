@@ -1,0 +1,9 @@
+{
+  "name": "Mechanical Keyboard",
+  "description": "Best mechanical keyboard in the universe",
+  "externalId": "mech-keyboard-1",
+  "channel": "web",
+  "currency": "USD",
+  "price": "100.0",
+  "enabledInstallments": [1]
+}

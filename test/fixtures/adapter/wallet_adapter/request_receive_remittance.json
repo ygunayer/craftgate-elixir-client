@@ -1,0 +1,7 @@
+{
+  "currency": "USD",
+  "price": "3.14",
+  "remittanceReasonType": "SUBMERCHANT_SEND_RECEIVE",
+  "memberId": 15,
+  "description": "bar"
+}

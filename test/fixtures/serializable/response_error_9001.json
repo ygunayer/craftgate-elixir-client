@@ -1,0 +1,6 @@
+{
+  "errors": {
+    "errorCode": "9001",
+    "errorDescription": "Payment not found!"
+  }
+}

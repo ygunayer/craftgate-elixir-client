@@ -1,0 +1,16 @@
+{
+  "name": "Foo Bar",
+  "memberExternalId": "my-user-id-1",
+  "address": "Foo Bar St. No 16",
+  "email": "foo@bar.com",
+  "phoneNumber": "+905551234567",
+  "identityNumber": "11111111111",
+  "contactName": "Foo",
+  "contactSurname": "Bar",
+  "memberType": "PERSONAL",
+  "taxOffice": "Kagithane",
+  "taxNumber": "11111111111",
+  "iban": "TR180006219896767692848261",
+  "isBuyer": true,
+  "isSubMerchant": false
+}

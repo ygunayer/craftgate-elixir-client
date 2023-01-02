@@ -1,0 +1,14 @@
+{
+  "apmOrderId": "1234567",
+  "apmUserIdentity": "user-1",
+  "callbackUrl": "https://www.your-website.com/craftgate-apm-init-callback",
+  "apmType": "PAPARA",
+  "buyerMemberId": 42,
+  "currency": "TRY",
+  "conversationId": "456d1297-908e-4bd6-a13b-4be31a6e47d5",
+  "clientIp": "1.2.3.4",
+  "externalId": "foo-123456",
+  "merchantApmId": 1042,
+  "paymentChannel": "web",
+  "price": "100.0"
+}

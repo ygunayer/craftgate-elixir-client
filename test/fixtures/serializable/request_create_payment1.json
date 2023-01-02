@@ -1,0 +1,17 @@
+{
+  "price": "100.0",
+  "paidPrice": "100.0",
+  "walletPrice": "0.0",
+  "currency": "TRY",
+  "installment": 1,
+  "items": [
+    {"price": "100.0", "name": "test item #1"}
+  ],
+  "card": {
+    "cardNumber": "5406670000000009",
+    "cardHolderName": "Foo Bar",
+    "cvc": "000",
+    "expireMonth": "12",
+    "expireYear": "2024"
+  }
+}

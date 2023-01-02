@@ -1,0 +1,53 @@
+defmodule Craftgate.Response.ReportingPaymentResponse do
+  @moduledoc """
+  Elixir equivalent of the Java data class [io.craftgate.response.ReportingPaymentResponse](https://github.com/craftgate/craftgate-java-client/blob/master/src/main/java/io/craftgate/response/ReportingPaymentResponse.java)
+  """
+
+  use Craftgate.Serializable, [
+    retry_count: :integer,
+    refundable_price: :decimal,
+    refund_status: Craftgate.Model.PaymentRefundStatus,
+    card_issuer_bank_name: :string,
+    md_status: :integer,
+    buyer_member: Craftgate.Response.MemberResponse,
+    refunds: {:array, Craftgate.Response.ReportingPaymentRefundResponse},
+    id: :integer,
+    created_date: :naive_datetime,
+    price: :decimal,
+    paid_price: :decimal,
+    wallet_price: :decimal,
+    currency: Craftgate.Model.Currency,
+    buyer_member_id: :integer,
+    installment: :integer,
+    conversation_id: :string,
+    external_id: :string,
+    payment_type: Craftgate.Model.PaymentType,
+    payment_provider: Craftgate.Model.PaymentProvider,
+    payment_source: Craftgate.Model.PaymentSource,
+    payment_group: Craftgate.Model.PaymentGroup,
+    payment_status: Craftgate.Model.PaymentStatus,
+    payment_phase: Craftgate.Model.PaymentPhase,
+    payment_channel: :string,
+    is_three_ds: :boolean,
+    merchant_commission_rate: :decimal,
+    merchant_commission_rate_amount: :decimal,
+    bank_commission_rate: :decimal,
+    bank_commission_rate_amount: :decimal,
+    paid_with_stored_card: :boolean,
+    bin_number: :string,
+    last_four_digits: :string,
+    auth_code: :string,
+    host_reference: :string,
+    trans_id: :string,
+    order_id: :string,
+    card_holder_name: :string,
+    bank_card_holder_name: :string,
+    card_type: Craftgate.Model.CardType,
+    card_association: Craftgate.Model.CardAssociation,
+    card_brand: :string,
+    requested_pos_alias: :string,
+    pos: Craftgate.Response.Dto.MerchantPos,
+    loyalty: Craftgate.Model.Loyalty,
+    payment_error: Craftgate.Response.Dto.PaymentError
+  ]
+end
