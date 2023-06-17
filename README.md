@@ -1,4 +1,4 @@
-[![Hex pm](https://img.shields.io/hexpm/v/craftgate.svg?style=flat)](https://hex.pm/packages/craftgate)
+[![Hex pm](https://img.shields.io/hexpm/v/craftgate.svg?style=flat)](https://hex.pm/packages/craftgate) [![Coverage Status](https://coveralls.io/repos/github/ygunayer/craftgate-elixir-client/badge.svg?branch=main)](https://coveralls.io/github/ygunayer/craftgate-elixir-client?branch=main)
 
 # Craftgate
 This repo contains the Elixir client for Craftgate API.
