@@ -161,7 +161,9 @@ defmodule Craftgate.HttpClient do
         end)
         |> Enum.join("&")
 
-      URI.append_query(uri, query_string)
+      uri
+      |> URI.parse()
+      |> Map.put(:query, query_string)
     end
   end
 end

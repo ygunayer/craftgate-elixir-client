@@ -42,6 +42,6 @@ defmodule Mix.Tasks.Sample.Payment.Create do
 
     {:ok, result} = Craftgate.Adapter.PaymentAdapter.create_payment(request)
 
-    dbg(result)
+    IO.inspect(result)
   end
 end
