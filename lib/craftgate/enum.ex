@@ -74,7 +74,7 @@ defmodule Craftgate.Enum do
 
   def castc(value, variants) when is_atom(value) do
     unless value in variants do
-      Logger.warn(
+      Logger.warning(
         "An unknown enum value was received but accepted for backwards compatibility: #{value}. Known values are: #{inspect(variants)}"
       )
     end

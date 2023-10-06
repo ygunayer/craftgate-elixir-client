@@ -1,26 +1,25 @@
 defmodule CraftgateTest.Adapter.PaymentAdapterTest do
   use CraftgateTest.Support.TestAdapter
 
-  alias Craftgate.Request.UpdatePaymentTransactionRequest
-  alias Craftgate.Request.CheckMasterpassUserRequest
-  alias Craftgate.Request.DisapprovePaymentTransactionsRequest
-  alias Craftgate.Request.ApprovePaymentTransactionsRequest
-  alias Craftgate.Request.DeleteStoredCardRequest
-  alias Craftgate.Model.CardType
-  alias Craftgate.Model.CardAssociation
-  alias Craftgate.Request.SearchStoredCardsRequest
-  alias Craftgate.Request.UpdateCardRequest
   alias Craftgate.Adapter.PaymentAdapter
   alias Craftgate.Model.ApmType
+  alias Craftgate.Model.CardAssociation
+  alias Craftgate.Model.CardType
   alias Craftgate.Model.Currency
   alias Craftgate.Model.PaymentGroup
+  alias Craftgate.Model.PaymentProvider
   alias Craftgate.Model.RefundDestinationType
+  alias Craftgate.Request.ApprovePaymentTransactionsRequest
+  alias Craftgate.Request.CheckMasterpassUserRequest
   alias Craftgate.Request.CompleteApmPaymentRequest
+  alias Craftgate.Request.CompletePosApmPaymentRequest
   alias Craftgate.Request.CompleteThreeDSPaymentRequest
   alias Craftgate.Request.CreateApmPaymentRequest
   alias Craftgate.Request.CreateDepositPaymentRequest
   alias Craftgate.Request.CreateFundTransferDepositPaymentRequest
   alias Craftgate.Request.CreatePaymentRequest
+  alias Craftgate.Request.DeleteStoredCardRequest
+  alias Craftgate.Request.DisapprovePaymentTransactionsRequest
   alias Craftgate.Request.Dto.Card
   alias Craftgate.Request.Dto.GarantiPayInstallment
   alias Craftgate.Request.Dto.PaymentItem
@@ -29,12 +28,16 @@ defmodule CraftgateTest.Adapter.PaymentAdapterTest do
   alias Craftgate.Request.InitCheckoutPaymentRequest
   alias Craftgate.Request.InitGarantiPayPaymentRequest
   alias Craftgate.Request.InitGarantiPayPaymentRequest
+  alias Craftgate.Request.InitPosApmPaymentRequest
   alias Craftgate.Request.InitThreeDSPaymentRequest
   alias Craftgate.Request.PostAuthPaymentRequest
   alias Craftgate.Request.RefundPaymentRequest
   alias Craftgate.Request.RefundPaymentTransactionRequest
   alias Craftgate.Request.RetrieveLoyaltiesRequest
+  alias Craftgate.Request.SearchStoredCardsRequest
   alias Craftgate.Request.StoreCardRequest
+  alias Craftgate.Request.UpdateCardRequest
+  alias Craftgate.Request.UpdatePaymentTransactionRequest
 
   test_endpoint(
     "create_payment/1",
@@ -397,6 +400,59 @@ defmodule CraftgateTest.Adapter.PaymentAdapterTest do
     expect: [
       post: "/payment/v1/apm-payments",
       body: @fixture_request_create_apm_payment
+    ]
+  )
+
+  test_endpoint(
+    "init_pos_apm_payment/1",
+    when:
+      PaymentAdapter.init_pos_apm_payment(%InitPosApmPaymentRequest{
+        price: Decimal.new("100.0"),
+        paid_price: Decimal.new("100.0"),
+        currency: Currency.try(),
+        payment_group: PaymentGroup.listing_or_subscription(),
+        conversation_id: "456d1297-908e-4bd6-a13b-4be31a6e47d5",
+        payment_provider: PaymentProvider.ykb_world_pay(),
+        callback_url: "https://www.your-website.com/craftgate-pos-apm-callback",
+        additional_params: %{
+          "sourceCode" => "WEB2QR"
+        },
+        items: [
+          %PaymentItem{
+            name: "Item 1",
+            price: Decimal.new("30.0"),
+            external_id: "123d1297-839e-4bd6-a13b-4be31a6e12a8"
+          },
+          %PaymentItem{
+            name: "Item 2",
+            price: Decimal.new("50.0"),
+            external_id: "789d1297-839e-4bd6-a13b-4be31a6e13f7"
+          },
+          %PaymentItem{
+            name: "Item 3",
+            price: Decimal.new("20.0"),
+            external_id: "3a1d1297-839e-4bd6-a13b-4be31a6e18e6"
+          }
+        ]
+      }),
+    expect: [
+      post: "/payment/v1/pos-apm-payments/init",
+      body: @fixture_request_init_pos_apm_payment
+    ]
+  )
+
+  test_endpoint(
+    "complete_pos_apm_payment/1",
+    when:
+      PaymentAdapter.complete_pos_apm_payment(%CompletePosApmPaymentRequest{
+        payment_id: 42,
+        additional_params: %{
+          "foo" => "bar"
+        }
+      }),
+    expect: [
+      post: "/payment/v1/pos-apm-payments/complete",
+      body: @fixture_request_complete_pos_apm_payment
     ]
   )
 

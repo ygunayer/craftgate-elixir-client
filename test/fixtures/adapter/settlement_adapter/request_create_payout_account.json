@@ -1,0 +1,6 @@
+{
+  "accountOwner": "MERCHANT",
+  "currency": "USD",
+  "externalAccountId": "wiseRecipientId",
+  "type": "WISE"
+}

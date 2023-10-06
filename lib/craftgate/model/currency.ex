@@ -8,6 +8,7 @@ defmodule Craftgate.Model.Currency do
     :ARS,
     :EUR,
     :GBP,
+    :AZN,
     :USD,
     :TRY,
     :BRL,

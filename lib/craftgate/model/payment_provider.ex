@@ -6,10 +6,13 @@ defmodule Craftgate.Model.PaymentProvider do
   use Craftgate.Enum, [
     :EDENRED,
     :BANK,
+    :YKB_WORLD_PAY,
+    :GOOGLEPAY,
     :MASTERPASS,
     :GARANTI_PAY,
     :PAYONEER,
     :PAPARA,
+    :APPLEPAY,
     :CG_WALLET,
     :SODEXO
   ]

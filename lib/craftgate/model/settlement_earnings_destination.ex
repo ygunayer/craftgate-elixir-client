@@ -4,6 +4,7 @@ defmodule Craftgate.Model.SettlementEarningsDestination do
   """
 
   use Craftgate.Enum, [
+    :CROSS_BORDER,
     :IBAN,
     :WALLET
   ]

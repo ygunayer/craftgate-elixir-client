@@ -1,7 +1,7 @@
 defmodule Craftgate.MixProject do
   use Mix.Project
 
-  @version "1.0.40"
+  @version "1.0.41"
 
   def project do
     [

@@ -8,6 +8,7 @@ defmodule Craftgate.Adapter.PaymentAdapter do
   alias Craftgate.Request.ApprovePaymentTransactionsRequest
   alias Craftgate.Request.CheckMasterpassUserRequest
   alias Craftgate.Request.CompleteApmPaymentRequest
+  alias Craftgate.Request.CompletePosApmPaymentRequest
   alias Craftgate.Request.CompleteThreeDSPaymentRequest
   alias Craftgate.Request.CreateApmPaymentRequest
   alias Craftgate.Request.CreateDepositPaymentRequest
@@ -19,6 +20,7 @@ defmodule Craftgate.Adapter.PaymentAdapter do
   alias Craftgate.Request.InitApmPaymentRequest
   alias Craftgate.Request.InitCheckoutPaymentRequest
   alias Craftgate.Request.InitGarantiPayPaymentRequest
+  alias Craftgate.Request.InitPosApmPaymentRequest
   alias Craftgate.Request.InitThreeDSPaymentRequest
   alias Craftgate.Request.PostAuthPaymentRequest
   alias Craftgate.Request.RefundPaymentRequest
@@ -32,10 +34,12 @@ defmodule Craftgate.Adapter.PaymentAdapter do
   alias Craftgate.Response.ApmPaymentCompleteResponse
   alias Craftgate.Response.ApmPaymentInitResponse
   alias Craftgate.Response.CheckMasterpassUserResponse
+  alias Craftgate.Response.CompletePosApmPaymentResponse
   alias Craftgate.Response.DepositPaymentResponse
   alias Craftgate.Response.FundTransferDepositPaymentResponse
   alias Craftgate.Response.InitCheckoutPaymentResponse
   alias Craftgate.Response.InitGarantiPayPaymentResponse
+  alias Craftgate.Response.InitPosApmPaymentResponse
   alias Craftgate.Response.InitThreeDSPaymentResponse
   alias Craftgate.Response.PaymentRefundResponse
   alias Craftgate.Response.PaymentResponse
@@ -75,6 +79,10 @@ defmodule Craftgate.Adapter.PaymentAdapter do
   endpoint complete_apm_payment(body: CompleteApmPaymentRequest.t()), post: "/payment/v1/apm-payments/complete", return: ApmPaymentCompleteResponse.t()
 
   endpoint create_apm_payment(body: CreateApmPaymentRequest.t()), post: "/payment/v1/apm-payments", return: PaymentResponse.t()
+
+  endpoint init_pos_apm_payment(body: InitPosApmPaymentRequest.t()), post: "/payment/v1/pos-apm-payments/init", return: InitPosApmPaymentResponse.t()
+
+  endpoint complete_pos_apm_payment(body: CompletePosApmPaymentRequest.t()), post: "/payment/v1/pos-apm-payments/complete", return: CompletePosApmPaymentResponse.t()
 
   endpoint retrieve_loyalties(body: RetrieveLoyaltiesRequest.t()), post: "/payment/v1/card-loyalties/retrieve", return: RetrieveLoyaltiesResponse.t()
 
