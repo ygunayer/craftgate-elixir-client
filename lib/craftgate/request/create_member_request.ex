@@ -17,7 +17,9 @@ defmodule Craftgate.Request.CreateMemberRequest do
     tax_office: :string,
     tax_number: :string,
     iban: :string,
+    settlement_earnings_destination: Craftgate.Model.SettlementEarningsDestination,
     negative_wallet_amount_limit: :decimal,
+    sub_merchant_maximum_allowed_negative_balance: :decimal,
     is_buyer: :boolean,
     is_sub_merchant: :boolean
   ]

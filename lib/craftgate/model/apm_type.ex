@@ -7,6 +7,7 @@ defmodule Craftgate.Model.ApmType do
     :EDENRED,
     :FUND_TRANSFER,
     :PAYPAL,
+    :STRIPE,
     :AFTERPAY,
     :PAYONEER,
     :PAPARA,

@@ -21,7 +21,7 @@ Add the `:craftgate` dependency to your `mix.exs` file
 ```elixir
 def deps do
   ...
-  {:craftgate, "~> 1.0.41"}
+  {:craftgate, "~> 1.0.42"}
   ...
 end
 ```

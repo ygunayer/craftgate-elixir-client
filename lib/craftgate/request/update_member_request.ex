@@ -18,6 +18,7 @@ defmodule Craftgate.Request.UpdateMemberRequest do
     iban: :string,
     settlement_earnings_destination: Craftgate.Model.SettlementEarningsDestination,
     negative_wallet_amount_limit: :decimal,
+    sub_merchant_maximum_allowed_negative_balance: :decimal,
     is_buyer: :boolean,
     is_sub_merchant: :boolean
   ]

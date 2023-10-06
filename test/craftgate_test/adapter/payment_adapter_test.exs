@@ -191,6 +191,14 @@ defmodule CraftgateTest.Adapter.PaymentAdapterTest do
   )
 
   test_endpoint(
+    "expire_checkout_payment/1",
+    when: PaymentAdapter.expire_checkout_payment("456d1297-908e-4bd6-a13b-4be31a6e47d5"),
+    expect: [
+      delete: "/payment/v1/checkout-payments/456d1297-908e-4bd6-a13b-4be31a6e47d5"
+    ]
+  )
+
+  test_endpoint(
     "create_deposit_payment/1",
     when:
       PaymentAdapter.create_deposit_payment(%CreateDepositPaymentRequest{

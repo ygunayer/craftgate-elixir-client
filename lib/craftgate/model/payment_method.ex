@@ -6,6 +6,7 @@ defmodule Craftgate.Model.PaymentMethod do
   use Craftgate.Enum, [
     :EDENRED,
     :PAYPAL,
+    :STRIPE,
     :ALIPAY,
     :AFTERPAY,
     :MASTERPASS,

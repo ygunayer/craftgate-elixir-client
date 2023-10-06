@@ -62,6 +62,8 @@ defmodule Craftgate.Adapter.PaymentAdapter do
 
   endpoint retrieve_checkout_payment(token: String.t()), get: "/payment/v1/checkout-payments/:token", return: PaymentResponse.t()
 
+  endpoint expire_checkout_payment(token: String.t()), delete: "/payment/v1/checkout-payments/:token"
+
   endpoint create_deposit_payment(body: CreateDepositPaymentRequest.t()), post: "/payment/v1/deposits", return: DepositPaymentResponse.t()
 
   endpoint init_3ds_deposit_payment(body: CreateDepositPaymentRequest.t()), post: "/payment/v1/deposits/3ds-init", return: InitThreeDSPaymentResponse.t()

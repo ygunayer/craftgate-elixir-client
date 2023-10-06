@@ -5,6 +5,7 @@ defmodule Craftgate.Response.InitCheckoutPaymentResponse do
 
   use Craftgate.Serializable, [
     token: :string,
-    page_url: :string
+    page_url: :string,
+    token_expire_date: :naive_datetime
   ]
 end

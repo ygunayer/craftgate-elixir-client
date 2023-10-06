@@ -27,6 +27,7 @@ defmodule Craftgate.Request.InitCheckoutPaymentRequest do
     allow_installment_only_commercial_cards: :boolean,
     force_three_ds: :boolean,
     force_auth_for_non_credit_cards: :boolean,
+    ttl: :integer,
     custom_installments: {:array, Craftgate.Request.Dto.CustomInstallment},
     items: {:array, Craftgate.Request.Dto.PaymentItem}
   ]

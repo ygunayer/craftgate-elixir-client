@@ -8,6 +8,7 @@ defmodule Craftgate.Model.PaymentProvider do
     :BANK,
     :YKB_WORLD_PAY,
     :GOOGLEPAY,
+    :STRIPE,
     :MASTERPASS,
     :GARANTI_PAY,
     :PAYONEER,
